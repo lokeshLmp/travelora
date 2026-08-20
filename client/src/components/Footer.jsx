@@ -98,6 +98,7 @@ export default function Footer() {
           </div>
         </div>
       </div>
+    <p className="text-center text-sm">lokesh_lmp</p>
     </footer>
   );
 }

@@ -7,6 +7,9 @@ const errorHandler = require('./middleware/errorHandler');
 dotenv.config();
 
 const app = express();
+app.get("/", (req, res) => {
+  res.send("Travelora backend is running successfully!");
+});
 const PORT = process.env.PORT || 5000;
 const MONGO_URI = process.env.MONGO_URI || 'mongodb://127.0.0.1:27017/travelora';
 

@@ -7,7 +7,7 @@ export default defineConfig({
     port: 5173,
     proxy: {
       '/api': {
-        target: 'http://localhost:5000',
+        target: 'https://travelora-server-7j7h.onrender.com',
         changeOrigin: true,
       },
     },

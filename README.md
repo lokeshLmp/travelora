@@ -139,7 +139,21 @@ cd client
 npm run dev
 # Runs at http://localhost:5173
 ```
+---
+## 👨‍💻 Author
 
+### **Lokesh Patil**
+*BE Information Technology | Full-Stack Developer*
+
+🚀 **Travelora** is a full-stack Smart Travel Booking System developed by **Lokesh Patil** as a web development project.
+
+**Tech Stack:**  
+`React.js` • `Vite` • `Tailwind CSS` • `Node.js` • `Express.js` • `MongoDB` • `Mongoose` • `REST API`
+
+🎓 **Department of Information Technology**  
+**K. C. College of Engineering and Management Studies & Research**
+
+> *Built with the goal of creating a modern, scalable and user-friendly travel booking experience.*
 ---
 
 ## 🔑 Demo Credentials

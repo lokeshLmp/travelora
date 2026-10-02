@@ -96,7 +96,7 @@ travelora/
 │   ├── server.js                # Server entry point
 │   └── package.json
 │ 
-├── booking-server   
+├── booking-service  
 ├── package.json                 # Root script runner
 ├── README.md
 └── .gitignore

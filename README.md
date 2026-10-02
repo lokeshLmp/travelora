@@ -57,91 +57,58 @@ Travel information, flight options, hotel bookings, and tour packages are often 
 
 ## 🛠️ Technology Stack
 
-| Layer | Technologies |
-| :--- | :--- |
-| **Frontend** | React 18, Vite, Tailwind CSS, Lucide React Icons, React Router v6, Canvas Confetti |
-| **Backend** | Node.js, Express.js, REST APIs, JSON Web Tokens (JWT), Bcrypt.js |
-| **Database** | MongoDB & Mongoose (with Demo Mode fallback) |
+| Layer              | Technologies                                                                       |
+| :----------------- | :--------------------------------------------------------------------------------- |
+| **Frontend**       | React 18, Vite, Tailwind CSS, Lucide React Icons, React Router v6, Canvas Confetti |
+| **Backend**        | Node.js, Express.js, REST APIs, Java, Spring Boot, Spring Web                      |
+| **Database**       | MongoDB, Mongoose, Spring Data MongoDB                                             |
+| **Authentication** | JSON Web Tokens (JWT), Bcrypt.js                                                   |
+| **Deployment**     | Docker, Render, Vercel                                                             |
+| **Build & Tools**  | Maven, Git, GitHub                                                                 |
+
 
 ---
 ```
+## 📁 Project Structure
 
-📁 Project Structure
+```text
 travelora/
 │
-├── client/                              # Frontend React application
+├── client/                         # React frontend
 │   ├── src/
-│   │   ├── components/                  # Reusable UI components
-│   │   ├── pages/                       # Home, Destinations, Packages, Booking, Admin...
-│   │   ├── layouts/                     # Main application layouts
-│   │   ├── data/                        # Sample destination, package & hotel data
-│   │   ├── services/                    # API and local storage services
-│   │   ├── hooks/                       # Authentication & wishlist hooks
-│   │   ├── utils/                       # Currency, date & pricing utilities
-│   │   ├── App.jsx                      # React application router
-│   │   ├── main.jsx                     # React entry point
-│   │   └── index.css                    # Global styles & Tailwind styles
-│   │
-│   ├── index.html
-│   ├── package.json
-│   ├── tailwind.config.js
-│   └── vite.config.js
-│
-├── server/                              # Existing Node.js + Express backend
-│   ├── models/                          # Mongoose models
-│   │   ├── User.js
-│   │   ├── Destination.js
-│   │   ├── Package.js
-│   │   ├── Hotel.js
-│   │   ├── Booking.js
-│   │   └── Review.js
-│   │
-│   ├── routes/                          # Express REST API routes
-│   ├── controllers/                     # Backend business logic
-│   ├── middleware/                      # JWT authentication & error handling
-│   ├── data/                            # Demo/sample data
-│   ├── server.js                        # Express server entry point
+│   │   ├── components/             # Reusable UI components
+│   │   ├── pages/                  # Application pages
+│   │   ├── layouts/                # Page layouts
+│   │   ├── services/               # API services
+│   │   ├── hooks/                  # Custom hooks & contexts
+│   │   ├── utils/                  # Utility functions
+│   │   ├── App.jsx                 # Main application
+│   │   └── main.jsx                # Entry point
+│   ├── public/
 │   └── package.json
 │
-├── booking-service/                     # Java Spring Boot booking microservice
-│   ├── src/
-│   │   ├── main/
-│   │   │   ├── java/
-│   │   │   │   └── com/
-│   │   │   │       └── travelora/
-│   │   │   │           └── booking/
-│   │   │   │               ├── controller/
-│   │   │   │               │   └── BookingController.java
-│   │   │   │               │
-│   │   │   │               ├── service/
-│   │   │   │               │   └── BookingService.java
-│   │   │   │               │
-│   │   │   │               ├── repository/
-│   │   │   │               │   └── BookingRepository.java
-│   │   │   │               │
-│   │   │   │               ├── model/
-│   │   │   │               │   ├── Booking.java
-│   │   │   │               │   ├── Traveller.java
-│   │   │   │               │   ├── Contact.java
-│   │   │   │               │   └── Pricing.java
-│   │   │   │               │
-│   │   │   │               └── BookingServiceApplication.java
-│   │   │   │
-│   │   │   └── resources/
-│   │   │       └── application.properties
-│   │   │
-│   │   └── test/
-│   │
-│   ├── .mvn/
-│   ├── Dockerfile                       # Java 21 Docker configuration
-│   ├── mvnw                             # Maven wrapper
-│   ├── mvnw.cmd                         # Maven wrapper for Windows
-│   ├── pom.xml                          # Maven dependencies & configuration
-│   └── test-booking.http                # API testing requests
+├── server/                         # Node.js + Express backend
+│   ├── models/                     # MongoDB/Mongoose models
+│   ├── routes/                     # REST API routes
+│   ├── controllers/                # Business logic
+│   ├── middleware/                 # Authentication & middleware
+│   ├── data/                       # Application data
+│   ├── server.js                   # Server entry point
+│   └── package.json
 │
-├── package.json                         # Root project configuration
-├── README.md                            # Project documentation
-└── .gitignore  # Git ignored files
+├── booking-service/                # Java Spring Boot service
+│   ├── src/
+│   │   └── main/
+│   │       ├── java/               # Controllers, services & repositories
+│   │       └── resources/          # Application configuration
+│   ├── pom.xml                     # Maven configuration
+│   ├── Dockerfile                  # Docker configuration
+│   └── mvnw                         # Maven wrapper
+│
+├── README.md                       # Project documentation
+├── package.json                    # Root configuration
+└── .gitignore                      # Git configuration
+```
 
 ```
 

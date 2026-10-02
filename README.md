@@ -64,42 +64,107 @@ Travel information, flight options, hotel bookings, and tour packages are often 
 | **Database** | MongoDB & Mongoose (with Demo Mode fallback) |
 
 ---
-
-## 📁 Project Structure
-
 ```
+
+📁 Project Structure
 travelora/
 │
-├── client/                      # Frontend React application
+├── client/                              # Frontend React application
 │   ├── src/
-│   │   ├── components/          # Reusable UI components (Navbar, Footer, Hero, Cards...)
-│   │   ├── pages/               # Pages (Home, Destinations, Packages, Booking, Admin...)
-│   │   ├── layouts/             # MainLayout with sticky header & footer
-│   │   ├── data/                # Sample datasets for destinations, packages, hotels...
-│   │   ├── services/            # API and local storage wrappers
-│   │   ├── hooks/               # Auth and Wishlist context providers
-│   │   ├── utils/               # Currency, date, and dynamic price calculators
-│   │   ├── App.jsx              # Client router
-│   │   ├── main.jsx             # React entry point
-│   │   └── index.css            # Tailwind & print styles
+│   │   ├── components/                  # Reusable UI components
+│   │   ├── pages/                       # Home, Destinations, Packages, Booking, Admin...
+│   │   ├── layouts/                     # Main application layouts
+│   │   ├── data/                        # Sample destination, package & hotel data
+│   │   ├── services/                    # API and local storage services
+│   │   ├── hooks/                       # Authentication & wishlist hooks
+│   │   ├── utils/                       # Currency, date & pricing utilities
+│   │   ├── App.jsx                      # React application router
+│   │   ├── main.jsx                     # React entry point
+│   │   └── index.css                    # Global styles & Tailwind styles
+│   │
 │   ├── index.html
 │   ├── package.json
 │   ├── tailwind.config.js
 │   └── vite.config.js
 │
-├── server/                      # Backend REST API
-│   ├── models/                  # Mongoose models (User, Destination, Package, Hotel, Booking, Review)
-│   ├── routes/                  # Express REST routes
-│   ├── controllers/             # Business logic handlers
-│   ├── middleware/              # JWT Auth & Error handling
-│   ├── data/                    # demoData.json
-│   ├── server.js                # Server entry point
+├── server/                              # Existing Node.js + Express backend
+│   ├── models/                          # Mongoose models
+│   │   ├── User.js
+│   │   ├── Destination.js
+│   │   ├── Package.js
+│   │   ├── Hotel.js
+│   │   ├── Booking.js
+│   │   └── Review.js
+│   │
+│   ├── routes/                          # Express REST API routes
+│   ├── controllers/                     # Backend business logic
+│   ├── middleware/                      # JWT authentication & error handling
+│   ├── data/                            # Demo/sample data
+│   ├── server.js                        # Express server entry point
 │   └── package.json
-│ 
-├── booking-service  
-├── package.json                 # Root script runner
-├── README.md
-└── .gitignore
+│
+├── booking-service/                     # Java Spring Boot booking microservice
+│   ├── src/
+│   │   ├── main/
+│   │   │   ├── java/
+│   │   │   │   └── com/
+│   │   │   │       └── travelora/
+│   │   │   │           └── booking/
+│   │   │   │               ├── controller/
+│   │   │   │               │   └── BookingController.java
+│   │   │   │               │
+│   │   │   │               ├── service/
+│   │   │   │               │   └── BookingService.java
+│   │   │   │               │
+│   │   │   │               ├── repository/
+│   │   │   │               │   └── BookingRepository.java
+│   │   │   │               │
+│   │   │   │               ├── model/
+│   │   │   │               │   ├── Booking.java
+│   │   │   │               │   ├── Traveller.java
+│   │   │   │               │   ├── Contact.java
+│   │   │   │               │   └── Pricing.java
+│   │   │   │               │
+│   │   │   │               └── BookingServiceApplication.java
+│   │   │   │
+│   │   │   └── resources/
+│   │   │       └── application.properties
+│   │   │
+│   │   └── test/
+│   │
+│   ├── .mvn/
+│   ├── Dockerfile                       # Java 21 Docker configuration
+│   ├── mvnw                             # Maven wrapper
+│   ├── mvnw.cmd                         # Maven wrapper for Windows
+│   ├── pom.xml                          # Maven dependencies & configuration
+│   └── test-booking.http                # API testing requests
+│
+├── package.json                         # Root project configuration
+├── README.md                            # Project documentation
+└── .gitignore  # Git ignored files
+
+```
+
+
+🏗️ Application Architecture
+                    ┌──────────────────────┐
+                    │   React Frontend     │
+                    │       (Vite)         │
+                    └──────────┬───────────┘
+                               │
+                  ┌────────────┴────────────┐
+                  │                         │
+                  ▼                         ▼
+        ┌──────────────────┐     ┌──────────────────────┐
+        │ Node.js +        │     │ Java + Spring Boot   │
+        │ Express Backend  │     │ Booking Service      │
+        └────────┬─────────┘     └──────────┬───────────┘
+                 │                          │
+                 └────────────┬─────────────┘
+                              ▼
+                     ┌─────────────────┐
+                     │ MongoDB / Atlas │
+                     └─────────────────┘
 ```
 
 ---

@@ -155,7 +155,18 @@ export default function Booking() {
     // Simulate realistic 1.5s network delay
     setTimeout(async () => {
       try {
-        const res = await api.createBooking(bookingPayload);
+        const res = await fetch('http://localhost:8081/api/java/bookings', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json'
+          },
+          body: JSON.stringify(bookingPayload)
+        }).then(response => {
+          if (!response.ok) {
+            throw new Error('Booking service failed');
+          }
+          return response.json();
+        });
         const bookingData = res.booking || {
           ...bookingPayload,
           bookingId: res.bookingId || generateBookingId(),

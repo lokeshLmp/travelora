@@ -155,7 +155,7 @@ export default function Booking() {
     // Simulate realistic 1.5s network delay
     setTimeout(async () => {
       try {
-        const res = await fetch('http://localhost:8081/api/java/bookings', {
+        const res = await fetch('https://travelora-e683.onrender.com/api/java/bookings', {
           method: 'POST',
           headers: {
             'Content-Type': 'application/json'
